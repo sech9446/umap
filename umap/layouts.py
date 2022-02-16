@@ -30,7 +30,7 @@ def clip(val):
 @numba.njit(
     "f4(f4[::1],f4[::1])",
     fastmath=True,
-    cache=True,
+    cache=False,
     locals={
         "result": numba.types.float32,
         "diff": numba.types.float32,
