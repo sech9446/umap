@@ -33,7 +33,7 @@ def trustworthiness_vector_bulk(
 
 
 def make_trustworthiness_calculator(metric):  # pragma: no cover
-    @numba.njit(parallel=True)
+    @numba.njit(parallel=False)
     def trustworthiness_vector_lowmem(source, indices_embedded, max_k):
 
         n_samples = indices_embedded.shape[0]

@@ -13,7 +13,7 @@ INT32_MIN = np.iinfo(np.int32).min + 1
 INT32_MAX = np.iinfo(np.int32).max - 1
 
 
-@numba.njit(parallel=True)
+@numba.njit(parallel=False)
 def in1d(arr, test_set):
     test_set = set(test_set)
     result = np.empty(arr.shape[0], dtype=np.uint8)

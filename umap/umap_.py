@@ -353,7 +353,7 @@ def nearest_neighbors(
         "rhos": numba.types.float32[::1],
         "val": numba.types.float32,
     },
-    parallel=True,
+    parallel=False,
     fastmath=True,
 )
 def compute_membership_strengths(

@@ -1239,7 +1239,7 @@ SPECIAL_METRICS = (
 )
 
 
-@numba.njit(parallel=True)
+@numba.njit(parallel=False)
 def parallel_special_metric(X, Y=None, metric=hellinger):
     if Y is None:
         result = np.zeros((X.shape[0], X.shape[0]))
@@ -1260,7 +1260,7 @@ def parallel_special_metric(X, Y=None, metric=hellinger):
 
 # We can gain efficiency by chunking the matrix into blocks;
 # this keeps data vectors in cache better
-@numba.njit(parallel=True, nogil=True)
+@numba.njit(parallel=False, nogil=True)
 def chunked_parallel_special_metric(X, Y=None, metric=hellinger, chunk_size=16):
     if Y is None:
         XX, symmetrical = X, True

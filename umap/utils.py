@@ -11,7 +11,7 @@ from sklearn.utils.validation import check_is_fitted
 import scipy.sparse
 
 
-@numba.njit(parallel=True)
+@numba.njit(parallel=False)
 def fast_knn_indices(X, n_neighbors):
     """A fast computation of knn indices.
 
@@ -98,7 +98,7 @@ def norm(vec):
     return np.sqrt(result)
 
 
-@numba.njit(parallel=True)
+@numba.njit(parallel=False)
 def submatrix(dmat, indices_col, n_neighbors):
     """Return a submatrix given an orginal matrix and the indices to keep.
 

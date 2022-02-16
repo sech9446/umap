@@ -995,7 +995,7 @@ def optimize_layout_aligned_euclidean(
     lambda_=5e-3,
     initial_alpha=1.0,
     negative_sample_rate=5.0,
-    parallel=True,
+    parallel=False,
     verbose=False,
     tqdm_kwds=None,
     move_other=False,
